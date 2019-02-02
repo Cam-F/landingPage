@@ -1,0 +1,30 @@
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+    font-weight: 300;
+}
+
+#header-img {
+    width: 75px;
+    height: 75px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+}
+
+#form {
+    background-color: gray;
+    width: 80%;
+    max-width: 1000px;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+}
