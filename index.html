@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Click script to change to full length film -->
 </head>
 
 <body>
@@ -33,7 +35,8 @@
     <!-- Home Section -->
     <div id="home">
         <div id="hero">
-            <video src="https://www.bird.co/wp-content/uploads/2018/10/HeaderVideoLoop_Opti.mp4" autoplay loop muted></video>
+            <video id="hero-vid" src="https://www.bird.co/wp-content/uploads/2018/10/HeaderVideoLoop_Opti.mp4" autoplay
+                loop muted data-video="https://www.bird.co/wp-content/uploads/2018/09/Bird_Animation_v32_1.mp4"></video>
             <div id="overlay">
                 <div id="hero-text-container">
                     <div id="hero-text">
@@ -52,6 +55,7 @@
         <!-- Cities Section -->
         <div id="cities">
             <h1>Bird's mission is to make cities more livable by reducing car usage, traffic, and carbon emissions.</h1>
+
         </div>
         <!-- Ride Section -->
         <div id="ride">
@@ -69,5 +73,13 @@
     </div>
 
 </body>
+
+<script>
+    $('video').click(function () {
+        video = '<iframe src="' + $(this).attr('data-video') + '" style="width: 100%; height: 500px; z-index: 3;"></iframe>';
+        $(this).replaceWith(video);
+        $('#overlay').remove();
+    });
+</script>
 
 </html>
