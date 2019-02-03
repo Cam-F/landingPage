@@ -10,55 +10,113 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Click script to change to full length film -->
 </head>
 
 <body>
-    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
     <!-- Navbar -->
     <header id="header">
         <nav id="nav-bar">
             <div id="nav-container">
-                <img src="https://duo.com/assets/img/customerlogos/bird-logo-2.png" class="header-img">
+                <img src="https://duo.com/assets/img/customerlogos/bird-logo-2.png" id="header-img">
 
                 <ul>
                     <li><a class="nav-link" href="#home">Home</a></li>
                     <li><a class="nav-link" href="#cities">Cities</a></li>
                     <li><a class="nav-link" href="#ride">Ride</a></li>
                 </ul>
-            </div>
+                <!-- </div> -->
         </nav>
     </header>
-
-    <!-- Home Section -->
-    <div id="home">
-        <div id="hero">
-            <video id="hero-vid" src="https://www.bird.co/wp-content/uploads/2018/10/HeaderVideoLoop_Opti.mp4" autoplay
-                loop muted data-video="https://www.bird.co/wp-content/uploads/2018/09/Bird_Animation_v32_1.mp4"></video>
-            <div id="overlay">
-                <div id="hero-text-container">
-                    <div id="hero-text">
-                        <h2><strong>Be free <br>
-                                from traffic and pollution</strong></h2>
-                    </div>
-                    <div id="play-button">
-                        <h3>Watch the film <i class="far fa-play-circle"></i></h3>
+    <div id="container">
+        <!-- Home Section -->
+        <div id="home">
+            <div id="hero">
+                <video id="hero-vid" src="https://www.bird.co/wp-content/uploads/2018/10/HeaderVideoLoop_Opti.mp4"
+                    autoplay loop muted data-video="https://www.bird.co/wp-content/uploads/2018/09/Bird_Animation_v32_1.mp4"></video>
+                <div id="overlay">
+                    <div id="hero-text-container">
+                        <div id="hero-text">
+                            <h2><strong>Be free <br>
+                                    from traffic and pollution</strong></h2>
+                        </div>
+                        <div id="play-button">
+                            <h3>Watch the film <i class="far fa-play-circle"></i></h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="container">
         <!-- Cities Section -->
         <div id="cities">
             <h1>Bird's mission is to make cities more livable by reducing car usage, traffic, and carbon emissions.</h1>
-
+            <div class="split">
+                <div id="cities-img-container">
+                    <img src="https://media.deseretdigital.com/file/1358143992?resize=width_1200&type=jpg&c=6&a=e0717f4c">
+                    <div id="img-text">
+                        <h1>100+</h1>
+                        <p>Cities</p>
+                    </div>
+                </div>
+                <div id="city-text">
+                    <div class="teaser">
+                        <div class="city-state"> TX</div>
+                        <div class="city-name"> Austin</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> KY</div>
+                        <div class="city-name"> Louisville</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> MO</div>
+                        <div class="city-name"> St. Louis</div>
+                    </div>
+                    <br>
+                    <div class="teaser">
+                        <div class="city-state"> UT</div>
+                        <div class="city-name"> Salt Lake City</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> FR</div>
+                        <div class="city-name"> Paris</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> OR</div>
+                        <div class="city-name"> Portland</div>
+                    </div>
+                    <br>
+                    <div class="teaser">
+                        <div class="city-state"> GA</div>
+                        <div class="city-name"> Atlanta</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> CA</div>
+                        <div class="city-name"> Santa Monica</div>
+                    </div>
+                    <div class="teaser">
+                        <div class="city-state"> OH</div>
+                        <div class="city-name"> Columbus</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Ride Section -->
         <div id="ride">
+            <div id="vertical-container">
+                <div id="vertical-center">
+                    <h2>Take a ride</h2>
+                    <p> Bird is a clean, convenient, affordable, car-reducing alternative to make cities more
+                        enjoyable.</p>
+                </div>
+            </div>
+            <div id="divider"></div>
+            <div id="ride-img">
+                <img src="https://www.bird.co/wp-content/uploads/2019/01/Bird_NearbyBirds.png" alt="">
+            </div>
 
         </div>
 
@@ -76,7 +134,7 @@
 
 <script>
     $('video').click(function () {
-        video = '<iframe src="' + $(this).attr('data-video') + '" style="width: 100%; height: 500px; z-index: 3;"></iframe>';
+        video = '<iframe src="' + $(this).attr('data-video') + '" id="video" style="width: 100%; height: 500px;"></iframe>';
         $(this).replaceWith(video);
         $('#overlay').remove();
     });
